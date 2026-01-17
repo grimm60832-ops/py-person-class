@@ -8,10 +8,8 @@ class Person:
 
 
 def create_person_list(people: list) -> list:
-    persons = []
-    for item in people:
-        person = Person(item["name"], item["age"])
-        persons.append(person)
+    persons = [Person(item["name"], item["age"]) for item in people]
+
     for item in people:
         person = Person.people[item["name"]]
         if item.get("wife") is not None:
